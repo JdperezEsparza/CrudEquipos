@@ -1,0 +1,56 @@
+body {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.card-custom {
+    background-color: #1a1a1a;
+    border: 1px solid #2d2d2d;
+}
+
+.card-header-custom {
+    background: linear-gradient(45deg, #2d2d2d, #404040);
+    border-bottom: 1px solid #2d2d2d;
+}
+
+.btn-outline-custom {
+    color: #ffffff;
+    border-color: #ffffff;
+    background-color: transparent;
+}
+
+.btn-outline-custom:hover {
+    background-color: #ffffff;
+    color: #000000 !important; /* Fuerza el color del texto en hover */
+    border-color: #ffffff;
+}
+
+.btn-outline-black {
+    color: #ffffff;
+    border-color: #ffffff;
+    background-color: transparent;
+}
+
+.btn-outline-black:hover {
+    background-color: #ffffff;
+    color: #000000 !important;
+    border-color: #ffffff;
+}
+
+/* Estilos para los inputs */
+.form-control, .form-select {
+    background-color: #2d2d2d;
+    border: 1px solid #404040;
+    color: #ffffff;
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: #363636;
+    border-color: #ffffff;
+    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+}
+
+.form-label {
+    color: #dee2e6 !important;
+}

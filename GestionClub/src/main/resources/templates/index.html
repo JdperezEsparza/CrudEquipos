@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión Deportiva</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body>
+    <div class="container py-5">
+        <header class="text-center mb-5">
+            <h1 class="display-4 fw-bold mb-3">
+                <i class="fas fa-futbol me-3 text-white"></i>Gestión Deportiva
+            </h1>
+            <p class="lead text-white-50">Plataforma de gestión deportiva</p>
+        </header>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="card card-custom feature-card shadow-lg h-100">
+                    <div class="card-header card-header-custom">
+                        <h5 class="card-title mb-0 text-white">
+                            <i class="fas fa-users-cog me-2"></i>Entrenadores
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text text-white-50">Administración de personal técnico</p>
+                        <a href="/entrenadores" class="btn btn-outline-custom stretched-link">Acceder</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card card-custom feature-card shadow-lg h-100">
+                    <div class="card-header card-header-custom">
+                        <h5 class="card-title mb-0 text-white">
+                            <i class="fas fa-flag me-2"></i>Clubes
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text text-white-50">Gestión de organizaciones deportivas</p>
+                        <a href="/clubes" class="btn btn-outline-custom stretched-link">Acceder</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card card-custom feature-card shadow-lg h-100">
+                    <div class="card-header card-header-custom">
+                        <h5 class="card-title mb-0 text-white">
+                            <i class="fas fa-users me-2"></i>Jugadores
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text text-white-50">Registro y seguimiento de deportistas</p>
+                        <a href="/jugadores" class="btn btn-outline-custom stretched-link">Acceder</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card card-custom feature-card shadow-lg h-100">
+                    <div class="card-header card-header-custom">
+                        <h5 class="card-title mb-0 text-white">
+                            <i class="fas fa-trophy me-2"></i>Competiciones
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text text-white-50">Organización de eventos deportivos</p>
+                        <a href="/competiciones" class="btn btn-outline-custom stretched-link">Acceder</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card card-custom feature-card shadow-lg h-100">
+                    <div class="card-header card-header-custom">
+                        <h5 class="card-title mb-0 text-white">
+                            <i class="fas fa-handshake me-2"></i>Asociaciones
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text text-white-50">Relaciones institucionales y federaciones</p>
+                        <a href="/asociaciones" class="btn btn-outline-custom stretched-link">Acceder</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="mt-5 pt-4 text-center text-white-50 border-top border-dark">
+            <p class="mb-0">Juan Diego Perez Esparza &copy; 2025</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

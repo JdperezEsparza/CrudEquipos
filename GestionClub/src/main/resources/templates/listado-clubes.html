@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Clubes</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link th:href="@{/css/style2.css}" rel="stylesheet">
+</head>
+
+<body class="container py-4">
+	<div class="d-flex justify-content-between align-items-center mb-4">
+		<h1 class="mb-0">
+			<a href="/" class="text-decoration-none text-white">
+				<i class="fas fa-arrow-left me-2"></i>
+			</a>
+			Listado de Clubes
+		</h1>
+		<a href="/" class="btn btn-outline-custom">
+			<i class="fas fa-home me-2"></i>Volver al Index
+		</a>
+	</div>
+
+	<a href="/clubes/nuevo" class="btn btn-outline-custom mb-4">
+		<i class="fas fa-plus me-2"></i>Nuevo Club
+	</a>
+
+	<div class="table-responsive">
+		<table class="table table-custom table-striped table-hover border-secondary">
+			<thead>
+				<tr>
+					<th>Nombre</th>
+					<th>País</th>
+					<th>Ciudad</th>
+					<th>Estadio</th>
+					<th>Último Título</th>
+					<th>Asociación</th>
+					<th>Entrenador</th>
+					<th>Competiciones</th>
+					<th>Jugadores</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="club : ${clubes}">
+					<td th:text="${club.nombre}"></td>
+					<td th:text="${club.pais}"></td>
+					<td th:text="${club.ciudad}"></td>
+					<td th:text="${club.estadio}"></td>
+					<td th:text="${club.ultimoTitulo}"></td>
+					<td th:text="${club.asociacion?.nombre}"></td>
+					<td th:text="${club.entrenador?.nombre + ' ' + club.entrenador?.apellido}"></td>
+
+					<!-- Columna 7: Competiciones -->
+					<td>
+						<span th:each="competicion : ${club.competiciones}"
+							class="badge bg-light text-dark border border-secondary-subtle rounded-pill fs-6 p-1 px-2"
+							th:text="${competicion.nombre}"></span>
+
+					</td>
+
+					<!-- Columna 8: Jugadores -->
+					<td>
+
+
+						<span th:each="jugador : ${club.jugadores}"
+							class="badge bg-light text-dark border border-secondary-subtle rounded-pill fs-6 p-1 px-2">
+							<span th:text="${jugador.nombre + ' ' + jugador.apellido}"></span>
+						</span>
+
+					</td>
+
+
+					<!-- Columna 9: Acciones -->
+					<td>
+						<a th:href="@{/clubes/editar/{id}(id=${club.id})}" class="btn btn-sm btn-outline-black me-2">
+							<i class="fas fa-edit me-1"></i>Editar
+						</a>
+						<a th:href="@{/clubes/eliminar/{id}(id=${club.id})}" class="btn btn-sm btn-outline-danger"
+							onclick="return confirm('¿Eliminar club?')">
+							<i class="fas fa-trash me-1"></i>Eliminar
+						</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
