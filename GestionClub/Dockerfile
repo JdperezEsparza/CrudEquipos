@@ -1,14 +1,12 @@
-# Dockerfile (en GestionClub/)
-# --- Fase de construcción con Maven ---
-FROM maven:3.8.6-openjdk-17 AS builder
+# Usa una etiqueta válida
+FROM maven:3.8.6-eclipse-temurin-17 AS builder
+
 WORKDIR /app
 COPY pom.xml .
 COPY src ./src
-RUN mvn clean package  # Genera el JAR en /app/target/
+RUN mvn clean package
 
-# --- Fase de ejecución ---
-FROM openjdk:17
+FROM eclipse-temurin:17-jre
 WORKDIR /app
-COPY --from=builder /app/target/GestionClub-*.jar ./app.jar
-EXPOSE 4000
-ENTRYPOINT ["java", "-jar", "app.jar"]
+COPY --from=builder /app/target/*.jar app.jar
+CMD ["java", "-jar", "app.jar"]
